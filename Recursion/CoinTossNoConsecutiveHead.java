@@ -1,0 +1,20 @@
+package Recursion;
+
+// print all possible outcomes on tossing a coin "n" times jaha pr 2 heads lgata na aarhe ho.
+
+public class CoinTossNoConsecutiveHead {
+    public static void main(String[] args) {
+        int n = 3;
+        printOutcomes(n , "");
+    }
+    public static void printOutcomes(int n , String ans){
+        if(n == 0){
+            System.out.println(ans);
+            return;
+        }
+        if(ans.length() == 0 || ans.charAt(ans.length() - 1) != 'H'){
+            printOutcomes(n-1, ans + "H");
+        }
+        printOutcomes(n-1, ans + "T");
+    }
+}

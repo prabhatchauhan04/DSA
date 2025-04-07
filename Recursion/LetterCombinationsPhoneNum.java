@@ -1,0 +1,38 @@
+package Recursion;
+
+/* Leetcode Ques 17. Letter Combinations of a Phone Number
+
+    Given a string containing digits from 2-9 inclusive, return all possible letter combinations that the number could represent. 
+    Return the answer in any order.
+
+    A mapping of digits to letters (just like on the telephone buttons) is given below. Note that 1 does not map to any letters. 
+    Example 1:
+        Input: digits = "23"
+        Output: ["ad","ae","af","bd","be","bf","cd","ce","cf"]
+    Example 2:
+        Input: digits = ""
+        Output: []
+    Example 3:
+        Input: digits = "2"
+        Output: ["a","b","c"]
+*/
+
+public class LetterCombinationsPhoneNum {
+    static String[] map = {"" , "" , "abc" , "def" , "ghi" ,"jkl" , "mno" , "pqrs" , "tuv" , "wxyz"};
+    public static void main(String[] args) {
+        String ques = "23";
+        printCombinations(ques, "");
+    }
+    public static void printCombinations(String ques , String ans){
+        if (ques.length() == 0) {
+            System.out.print(ans + "  ");
+            return;
+        }
+        char ch = ques.charAt(0);
+        int num = ch - '0';
+        String press = map[num];
+        for (int i = 0 ; i < press.length() ; i++) {
+            printCombinations(ques.substring(1), ans + press.charAt(i));   
+        }
+    }
+}
