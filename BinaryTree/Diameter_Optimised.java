@@ -7,9 +7,10 @@ This path may or may not pass through the root.
 The length of a path between two nodes is represented by the number of edges between them.
 */
 
-// O(n^2) time complexity
+// O(n) time complexity
+// Optimized Solution
 
-public class Diameter {
+public class Diameter_Optimised {
     class TreeNode {
         int val;
         TreeNode left;
@@ -25,21 +26,25 @@ public class Diameter {
     
     class Solution {
         public int diameterOfBinaryTree(TreeNode root) {
+            return diameter(root).dia;
+        }
+        public DiaPair diameter(TreeNode root){
             if (root == null) {
-                return 0;
+                return new DiaPair();
             }
-            int ld = diameterOfBinaryTree(root.left);
-            int rd = diameterOfBinaryTree(root.right);
-            int sd = ht(root.left) + ht(root.right) + 2;
-            return Math.max(sd , Math.max(rd, ld));
+            DiaPair ldp = diameter(root.left);
+            DiaPair rdp = diameter(root.right);
+            DiaPair sdp = new DiaPair();
+            sdp.ht = Math.max(ldp.ht , rdp.ht) + 1;
+            int sd = ldp.ht + rdp.ht + 2;
+            sdp.dia = Math.max(sd , Math.max(rdp.dia , ldp.dia));
+            return sdp;
         }
-        public int ht(TreeNode nn){
-        if (nn == null) {
-            return -1;
+        class DiaPair{
+            int dia = 0;
+            int ht = -1;
         }
-        int htLeft = ht(nn.left);
-        int htRight = ht(nn.right);
-        return Math.max(htLeft , htRight) + 1;
-        }
-    }    
+    }  
 }
+
+
