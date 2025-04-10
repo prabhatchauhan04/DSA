@@ -1,4 +1,4 @@
-package OOPS_2;
+package OOPS_2.Abstraction;
 
 public abstract class Abstract_demo {
     public abstract void Payment();

@@ -1,4 +1,4 @@
-package OOPS_2;
+package OOPS_2.Abstraction;
 
 public class Payment_method extends Abstract_demo {
     @Override

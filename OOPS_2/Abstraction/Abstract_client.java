@@ -1,4 +1,4 @@
-package OOPS_2;
+package OOPS_2.Abstraction;
 
 public class Abstract_client {
     public static void main(String[] args) {
