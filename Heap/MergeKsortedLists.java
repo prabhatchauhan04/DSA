@@ -44,7 +44,7 @@ public class MergeKsortedLists {
                     pq.add(rv.next);
                 }
             }
-            return temp;
+            return temp.next;
        }
     }
 }
