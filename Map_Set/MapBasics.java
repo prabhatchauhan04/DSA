@@ -26,7 +26,6 @@ public class MapBasics {
         System.out.println(map);
         // size
         System.out.println(map.size());
-
         //TREEMAP
         TreeMap<String, Integer> map1 = new TreeMap<>();
 		// put
@@ -40,7 +39,6 @@ public class MapBasics {
 		map1.put("Puneet", 73);
 		map1.put("Ankita", 38);
 		System.out.println(map1);
-
         // LINKEDHASHMAP
         LinkedHashMap<String, Integer> map2 = new LinkedHashMap<>();
 		// put
@@ -55,8 +53,8 @@ public class MapBasics {
 		map2.put("Ankita", 38);
 		map2.put(null, 78);
 		System.out.println(map2);
-
         // SET
+		// "keySet" map ka method hai jo Set<KeyKaDataType> return krrha saari keys ka
 		Set<String> set = map.keySet();
 		System.out.println(set);
 		for (String key : set) {
