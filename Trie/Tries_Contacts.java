@@ -21,7 +21,6 @@ public class Tries_Contacts {
 			if (curr.child.containsKey(ch)) {
 				curr = curr.child.get(ch);
 				curr.count++;
-
 			} else {
 				Node n = new Node();
 				n.data = ch;
@@ -37,7 +36,6 @@ public class Tries_Contacts {
 			char ch = word.charAt(i);
 			if (curr.child.containsKey(ch)) {
 				curr = curr.child.get(ch);
-
 			} else {
 				return 0;
 			}
@@ -49,7 +47,6 @@ public class Tries_Contacts {
 		t.insert("hacker");
 		t.insert("hackerrrr");
 		System.out.println(t.find("hac"));
-
 	}
 }
 
