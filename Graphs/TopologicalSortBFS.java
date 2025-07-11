@@ -2,6 +2,7 @@ package Graphs;
 
 import java.util.*;
 
+// Kahns Algorithm
 public class TopologicalSortBFS {
     private HashMap<Integer, List<Integer>> map;
 
